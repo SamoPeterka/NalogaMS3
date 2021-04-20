@@ -12,8 +12,10 @@ namespace NalogaMS3.Models
         [Key]
         public Guid NalogaID { get; set; }
 
+        
         public string Naslov { get; set; }
 
+        [Display(Name = "Rok za oddajo")]
         public DateTime RokZaOddajo { get; set; }
 
     }

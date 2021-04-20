@@ -1,10 +1,10 @@
 ﻿@model NalogaMS3.Models.Student
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Odstrani študenta";
 }
 
-<h1>Delete</h1>
+<h1>Odstrani študenta</h1>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -33,7 +33,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Student_ID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Odstrani" class="btn btn-danger" /> |
+        <a asp-action="Index">Nazaj</a>
     </form>
 </div>

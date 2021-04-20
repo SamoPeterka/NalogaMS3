@@ -1,14 +1,12 @@
 ﻿@model NalogaMS3.Models.DomacaNaloga
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Podrobnosti";
 }
 
-<h1>Details</h1>
+<h1>Podrobnosti</h1>
 
 <div>
-    <h4>DomacaNaloga</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Naslov)
@@ -25,7 +23,7 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.NalogaID">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.NalogaID">Uredi</a> |
     <a asp-action="PregledOddaj" asp-route-id="@Model.NalogaID">Pregled oddaj</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Nazaj</a>
 </div>

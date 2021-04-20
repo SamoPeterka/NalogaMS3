@@ -7499,11 +7499,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programs\\ZaSluzbo\\NalogaMS3\\NalogaMS3\\NalogaMS3.csproj",
+      "projectUniqueName": "D:\\Default folders\\Documents\\GitNalogaMS3\\NalgoaMS3\\NalogaMS3\\NalogaMS3\\NalogaMS3.csproj",
       "projectName": "NalogaMS3",
-      "projectPath": "D:\\Programs\\ZaSluzbo\\NalogaMS3\\NalogaMS3\\NalogaMS3.csproj",
+      "projectPath": "D:\\Default folders\\Documents\\GitNalogaMS3\\NalgoaMS3\\NalogaMS3\\NalogaMS3\\NalogaMS3.csproj",
       "packagesPath": "C:\\Users\\Samo\\.nuget\\packages\\",
-      "outputPath": "D:\\Programs\\ZaSluzbo\\NalogaMS3\\NalogaMS3\\obj\\",
+      "outputPath": "D:\\Default folders\\Documents\\GitNalogaMS3\\NalgoaMS3\\NalogaMS3\\NalogaMS3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Samo\\AppData\\Roaming\\NuGet\\NuGet.Config",
