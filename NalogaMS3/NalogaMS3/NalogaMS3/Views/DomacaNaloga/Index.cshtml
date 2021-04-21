@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<NalogaMS3.Models.DomacaNaloga>
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Domače naloge";
+}
+
+<h1>Domače naloge</h1>
+
+@if (User.IsInRole("admin"))
+{
+    <p>
+        <a asp-action="Create">Ustvari novo nalogo</a>
+    </p>
+}
+@if (User.IsInRole("student"))
+{
+    <p>
+        <a asp-action="MojeOcene" asp-route-id="@UserManager.GetUserId(User)">Moje ocene</a>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naslov)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RokZaOddajo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naslov)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RokZaOddajo)
+                </td>
+                @if (User.IsInRole("admin"))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.NalogaID">Urejanje</a> |
+                        <a asp-action="Details" asp-route-id="@item.NalogaID">Podrobnosti</a> |
+                        <a asp-action="Delete" asp-route-id="@item.NalogaID">Izbriši</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

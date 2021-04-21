@@ -1,0 +1,51 @@
+﻿@model IEnumerable<NalogaMS3.OddajaView>
+
+@{
+    ViewData["Title"] = "Domače naloge";
+}
+
+<h1>Moje Domače naloge</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NaslovNaloge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumOddaje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ocena)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NaslovNaloge)
+            </td>
+            @if (item.DatumOddaje.Year == 0001)
+            {
+                <td>Naloga še ni oddana</td>
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.DatumOddaje)
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.Ocena)
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-id="">Nazaj</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

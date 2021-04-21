@@ -1,0 +1,53 @@
+﻿@model IEnumerable<NalogaMS3.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Študenti";
+}
+
+<h1>Študenti</h1>
+
+@if (User.IsInRole("admin"))
+{
+    <p>
+        <a class="nav-link text-dark" style="text-decoration: underline; color: darkblue;"asp-area="Identity" asp-page="/Account/Register">Dodaj Študenta</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Priimek)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.Email != "profesor@prof.com")
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Priimek)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Izbriši</a>
+                </td>
+            </tr>
+            }
+            else { }
+        }
+    </tbody>
+</table>
